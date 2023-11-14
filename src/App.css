@@ -1,38 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@100;200;400;800;900&family=Noto+Sans+JP&display=swap');
+@font-face{
+  font-family: 'signal';
+  src: local('signal'),
+  url('./fonts/Signal-Bold.ttf') format('ttf');
+}
+@font-face{
+  font-family: 'anurati';
+  src: local('anurati'),
+  url('./fonts/Anurati-Regular.ttf') format('ttf');
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+
+  color: #0d1114;
+}
+
+html{
+  font-size: 62.5%;
+}
 .App {
+  cursor: none;
+}
+.cursor-style {
+  background-color: #6313f0;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 100%;
+  transform-origin: 100% 100%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+}
+
+body{
+
+  background-color: #f1f1f1;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  text-transform: uppercase;
+font-weight: 200;
+}
+.nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-items{
+  font-size: 1.4rem;
+padding: 2rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #f1f1f1;
+
+}
+.nav-items:hover ~ .cursor-style{
+transform: scale(3);
+transition: transform 0.1s ease-in;
+background-color: red;
+}
+.svg{
+  width: 4rem;
+
+}
+.main{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-svg{
+width: 65vh;
+opacity: 10%;
+z-index: -1;
+position :absolute;
+}
+.hero-text{
+  width: 100%;
+  height: 100%;
+   font-family: anurati;
+  font-size: 10vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-self: center;
+  position: absolute;
+}
+.left,.right{
+width: 10%;
+display: flex;
+justify-content: center;
+}
+.left-svg,.right-svg{
+  width: 4rem;
+}
+.up-svg{
+  width: 40vw;
+}
+.down-svg{
+  width: 70vw;
+}
+.mid-con{
+  width: 80%;
+  height: 80vh;
+  display: flex;
+  position: relative;
+ 
+}
+.button{
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  font-weight: 400;
+  font-size: 1.4rem;
+ row-gap: 2rem;
+}
+.register-btn{
+  background-color: #29253e;
+  width: 20rem;
+  padding: 1em 2em;
+  text-align: center;
+  color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+}
+.register-btn-out{
+  border: 0.2rem solid #29253e;
+  text-align: center;
+  width: 20rem;
+  color: #29253e;
+  padding: 1em 2em;
+  position: relative;
+  overflow: hidden;
+}
+.register-btn::after{
+  content: "";
+  position: absolute;
+  width: 4%;
+  height: 200%;
+  background-color: #f1f1f1;
+  top: 0;
+  right: 20px;
+  transform: rotate(15deg) translateY(-100px);
+  
+}
+
+.register-btn:hover:after{
+  transform: rotate(15deg) translateY(-20px);
+  transition: transform ease-in 0.3s;
+}
+.paper:hover{
+transform: scale(1.05);
+transition: all 0.2s ease-in;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #29253e;
+}
+
+
+.heading{
+  font-weight: 800;
+  font-size: 4.8rem;
+  padding: 4rem 4.2rem;
+}
+.card-slider {
+  overflow: hidden;
+  position: relative;
+
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.card-container {
+  display: flex;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  column-gap: 2rem;
+}
+
+
+
+.testimonial-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-card {
+  min-width: 100vw;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+@media only screen and (max-width: 600px) {
+  html{
+    font-size: 0.4rem;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.button{
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.hero-svg{
+  width: 40rem;}
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
