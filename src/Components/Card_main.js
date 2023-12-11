@@ -6,6 +6,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { useContext } from 'react';
 import {Cart} from "../Context";
+import { motion } from 'framer-motion';
 
 export default function Card_main() {
 
@@ -14,12 +15,23 @@ export default function Card_main() {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <React.Fragment>     
+
+<motion.div
+initial={{ opacity: 0, y: 50 }}
+animate={
+  isOpen
+    ? { opacity: 1, y: 0, scale: 1.2 }
+    : { opacity: 0, y: 50, scale: 1 }
+}
+transition={{ duration: 4 }}
+>
       <Dialog
         fullScreen={fullScreen}
         open={isOpen}
         onClose={()=>setIsOpen(false)}
         aria-labelledby="responsive-dialog-title"
+
+        
       >      
         <DialogActions>
           <Button onClick={()=>setIsOpen(false)}>
@@ -27,6 +39,7 @@ export default function Card_main() {
           </Button>        
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+      </motion.div>
+
   );
 }

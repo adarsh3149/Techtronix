@@ -1,9 +1,11 @@
 import { Typography } from '@mui/material'
 import React from 'react'
+import AnimatedTitle from './AnimTitle'
 
 function Schedule() {
   return (
-    <Typography sx={{color:"black"}}>schedule</Typography>
+    <div className='heading' id='schedule'><AnimatedTitle name="schedule."/></div>
+      
   )
 }
 

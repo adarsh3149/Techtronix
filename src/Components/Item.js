@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { LoremIpsum } from "react-lorem-ipsum";
+
 import { Link } from "react-router-dom";
 import { items } from "./data";
 
@@ -35,11 +35,7 @@ export function Item({ id }) {
             <h2>{title}</h2>
           </motion.div>
           <motion.div className="content-container" animate>
-            <LoremIpsum
-              p={6}
-              avgWordsPerSentence={6}
-              avgSentencesPerParagraph={4}
-            />
+            
           </motion.div>
         </motion.div>
       </div>
